@@ -9,12 +9,17 @@
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      margin: 15px 0;
     }
     .streams {
       display: flex;
-      gap: 10px; /* расстояние между потоками */
+      flex-wrap: wrap; /* позволяет переносить блоки */
+      gap: 10px;
       justify-content: center;
-      margin-top: 20px;
     }
     iframe {
       width: 640px;
@@ -22,16 +27,29 @@
       border: none;
       background: #000;
     }
+
+    /* 📱 Для мобильных устройств */
+    @media (max-width: 768px) {
+      .streams {
+        flex-direction: column;
+        align-items: center;
+      }
+      iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 240px; /* уменьшаем высоту, чтобы влезало на экран */
+      }
+    }
   </style>
 </head>
 <body>
   <h2>Камеры хода строительства</h2>
   <div class="streams">
-    <!-- Первый поток -->
+    <!-- Первая камера -->
     <iframe src="https://rtsp.ru/embed/Yrf28zfa/" allowfullscreen></iframe>
 
-    <!-- Второй поток -->
-    <iframe src="https://rtsp.ru/embed/h7EanzYk/" allowfullscreen></iframe>
+    <!-- Вторая камера -->
+    <iframe src="https://rtsp.ru/embed/Ae8SQreY/" allowfullscreen></iframe>
   </div>
 </body>
 </html>
